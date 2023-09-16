@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../static/css/styles_2.css">
+  <title>Doctor List</title>
+  <style>
+    .navbar_1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:0px;
+  background-color: rgb(85, 172, 226); /* You can adjust the background color and opacity */
+  z-index: 1000; /* Ensure it's above other content */
+}
+.navbar_1-nav .nav-link {
+    font-size: 16px !important;
+}
+
+  </style>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- custom css -->
+     <link rel = "stylesheet" href = "../static/css/main.css" />
+     <link rel = "stylesheet" href = "../static/css/utilities.css" />
+     <link rel="stylesheet" href="../static/css/styles.css">
+     <!-- normalize.css -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="../static/css/style.css">
+ <!--============== Bootstrap link =============-->
+ <!-- _____ Slick Slider _____ -->
+ <link rel="stylesheet" href="../static/bootstrap_2.min.css">
+ <link rel="stylesheet" href="../static/css/slick.css">
+
+</head>
+<body>
+  <nav class = "navbar_1">
+    <div class="container_3">
+     <div class="sample" >
+       <div class="navbar_1-content d-flex justify-content-between align-items-center">
+           <div class = "brand-and-toggler d-flex align-items-center justify-content-between">
+              
+               <a href="#" class="navbar_1-brand d-flex align-items-center">
+                   <div class="logo-wrapper">
+                   <span class="brand-shape d-inline-block text-white">
+                       <img src="../static/images/logo.jpg" alt="" width="50" height="80">
+                   </span>
+                   </div>
+                   <span class = "brand-text fw-7" style="font-size: 28px;"> &nbsp;<b>SoulCare</b></span>  
+               </a>
+           </div>
+
+           <div class = "navbar_1-box">
+
+               <ul class = "d-flex align-items-center">
+                   <li class = "nav-item">
+                       <a href = "home1" class = "nav-link text-white  text-nowrap" style="font-size: 18px;">Home</a>
+                   </li>
+                   <li class = "nav-item">
+                       <a href = "doctor_list" class = "nav-link text-white nav-active text-nowrap" style="font-size: 18px;">Find a doctor</a>
+                   </li>
+                   <li class = "nav-item">
+                       <a href = "blood" class = "nav-link text-white text-nowrap" style="font-size: 18px;">Blood</a>
+                   </li>
+                   <li class = "nav-item">
+                       <a href = "#" class = "nav-link text-white text-nowrap"style="font-size: 18px;" > Testimonials</a>
+                   </li>
+                   <li class = "nav-item">
+                       <a href = "#" class = "nav-link text-white text-nowrap" style="font-size: 18px;">About us</a>
+                   </li>
+                   <li class = "nav-item">
+                       <a href = "login" class = "nav-link text-white text-nowrap" style="font-size: 18px;">Login</a>
+                   </li>
+                   <li class = "nav-item">
+                     <a href="tel:7402159777" class="">
+                       <div class="logo-wrapper">
+                       <span class="brand-shape d-inline-block text-white">
+                           <img src="../static/images/tel.png" alt="" >
+                       </span>
+           
+
+                       </div>                     
+                     </a>
+                   
+                 </li>
+               </ul>
+           </div>
+       </div>
+   </div>
+ </div><br>
+ <nav class="navbar">
+  <div class="search-options" style="margin-left: 700px;">
+    <select id="specialists-dropdown">
+      <option value="">Select Specialist</option>
+      <option value="Cardiology">cardiology</option>
+      <option value="Diabetelogy">Diabetelogy</option>
+      <option value="Child_specialist">Child specialist</option>
+      <option value="neurologist">neurologist</option>
+      <option value="general_medicine">general medicine</option>
+      <option value="liver_disease">liver disease</option>
+      <option value="Endocrinologist">Endocrinologist</option>
+      <option value="Dermatologist">Dermatologist</option>
+      <option value="Psychiatrist">Psychiatrist</option>
+      <option value="Neurologist">Neurologist</option>
+      <option value="Radiologist">Radiologist</option>
+      <option value="Anesthesiologist">Anesthesiologist</option>
+    </select>
+    <button id="searchButton">Search</button>
+    
+  </div>
+
+ </nav>
+</nav>
+
+ <br><br><br><br><br><br>
+  
+  
+ 
+  
+  
+  <div class="doctor-list">
+    <!-- Cardiology -->
+    <div class="doctor Cardiology">
+      <img src="../static/uploads/WO01.jpeg" alt="Dr. Cardiology 1">
+      <div class="doctor-details">
+        <h2 class="doctor-name">Dr. Aditi</h2>
+        <p class="specialty">Cardiology</p>
+        <p class="awards">Experience: 10 years</p>
+      </div>
+    </div>
+    <div class="doctor Cardiology">
+      <img src="../static/uploads/WO02.jpeg" alt="Dr. Cardiology 2">
+      <div class="doctor-details">
+        <h2 class="doctor-name">Dr. Amrendra Kumar</h2>
+        <p class="specialty">Cardiology</p>
+        <p class="awards">Experience: 9 years</p>
+      </div>
+    </div>
+    <div class="doctor Cardiology">
+      <img src="../static/uploads/WO03.jpg" alt="Dr. Cardiology 3">
+      <div class="doctor-details">
+        <h2 class="doctor-name">Dr. Anshu</h2>
+        <p class="specialty">Cardiology</p>
+        <p class="awards">Experience: 11 years</p>
+      </div>
+    </div>
+    <div class="doctor Cardiology">
+      <img src="../static/uploads/WO04.jpeg" alt="Dr. Cardiology 4">
+      <div class="doctor-details">
+        <h2 class="doctor-name">Dr. Debika</h2>
+        <p class="specialty">Cardiology</p>
+        <p class="awards">Experience: 8 years</p>
+      </div>
+    </div>
+
+    <!-- Diabetelogy -->
+    <div class="doctor Diabetelogy">
+      <img src="../static/uploads/WO05.jpg" alt="Dr. Diabetelogy 1">
+      <div class="doctor-details">
+        <h2 class="doctor-name">Dr. Shalini</h2>
+        <p class="specialty">Diabetelogy</p>
+        <p class="awards">Experience: 12 years</p>
+      </div>
+    </div>
+    <div class="doctor Diabetelogy">
+      <img src="../static/uploads/WO06.jpg" alt="Dr. Diabetelogy 2">
+      <div class="doctor-details">
+        <h2 class="doctor-name">Dr. . Manjunth</h2>
+        <p class="specialty">Diabetelogy</p>
+        <p class="awards">Experience: 10 years</p>
+      </div>
+    </div>
+    <div class="doctor Diabetelogy">
+      <img src="../static/uploads/WO07.jpg" alt="Dr. Diabetelogy 3">
+      <div class="doctor-details">
+        <h2 class="doctor-name">Dr. Abanti</h2>
+        <p class="specialty">Diabetelogy</p>
+        <p class="awards">Experience: 11 years</p>
+      </div>
+    </div>
+    <!--  <div class="doctor Diabetelogy">
+      <img src="path_to_Diabetelogy_image4.jpg" alt="Dr. Diabetelogy 4">
+      <div class="doctor-details">
+        <h2 class="doctor-name">Dr. Diabetelogy 4</h2>
+        <p class="specialty">Diabetelogy</p>
+        <p class="awards">Experience: 9 years</p>
+      </div>
+    </div>   -->
+
+    <!--Child -->
+    <div class="doctor Child_specialist">
+        <img src="../static/uploads/WO08.jpg" alt="Dr. Child_specialist 3">
+        <div class="doctor-details">
+          <h2 class="doctor-name">Dr. Aarathi Santhosh </h2>
+          <p class="specialty">Child specialist</p>
+          <p class="awards">Experience: 11 years</p>
+        </div>
+      </div>
+      <div class="doctor Child_specialist">
+        <img src="../static/uploads/WO09.jpg" alt="Dr. Child_specialist 4">
+        <div class="doctor-details">
+          <h2 class="doctor-name">Dr. Abhinandan</h2>
+          <p class="specialty">Child specialist</p>
+          <p class="awards">Experience: 9 years</p>
+        </div>
+      </div>
+      <!--Neurologist-->
+      <div class="doctor neurologist">
+        <img src="../static/uploads/WO10.jpg" alt="Dr. neurologist 3">
+        <div class="doctor-details">
+          <h2 class="doctor-name">Dr. Abhishek</h2>
+          <p class="specialty">neurologist</p>
+          <p class="awards">Experience: 11 years</p>
+        </div>
+      </div>
+      <div class="doctor neurologist">
+        <img src="../static/uploads/WO11.jpeg" alt="Dr. neurologist 4">
+        <div class="doctor-details">
+          <h2 class="doctor-name">Dr. Aditi</h2>
+          <p class="specialty">neurologist</p>
+          <p class="awards">Experience: 9 years</p>
+        </div>
+      </div>
+      <!---->
+
+      <div class="doctor general_medicine">
+        <img src="../static/uploads/WO12.jpg" alt="Dr. general_medicine 1">
+        <div class="doctor-details">
+          <h2 class="doctor-name">Dr. Ajay</h2>
+          <p class="specialty">general medicine</p>
+          <p class="awards">Experience: 12 years</p>
+        </div>
+      </div>
+      <div class="doctor general_medicine">
+        <img src="../static/uploads/WO13.jpg" alt="Dr. general_medicine 2">
+        <div class="doctor-details">
+          <h2 class="doctor-name">Dr. Aditi</h2>
+          <p class="specialty">general medicine</p>
+          <p class="awards">Experience: 10 years</p>
+        </div>
+      </div>
+      <div class="doctor liver_disease">
+        <img src="../static/uploads/WO14.jpg" alt="Dr. liver disease 3">
+        <div class="doctor-details">
+          <h2 class="doctor-name">Dr. Alakananda</h2>
+          <p class="specialty">liver disease</p>
+          <p class="awards">Experience: 11 years</p>
+        </div>
+      </div>
+      <!--  <div class="doctor liver disease">
+        <img src="path_to_liver disease_image4.jpg" alt="Dr. liver disease 4">
+        <div class="doctor-details">
+          <h2 class="doctor-name">Dr. liver disease 4</h2>
+          <p class="specialty">liver disease</p>
+          <p class="awards">Experience: 9 years</p>
+        </div>
+      </div>  -->
+
+    <!-- Add more doctor divs for other specialists -->
+  </div>
+  
+  <script>
+    const specialistsDropdown = document.getElementById("specialists-dropdown");
+    const doctorDivs = document.querySelectorAll(".doctor");
+    const searchButton = document.getElementById("searchButton");
+
+    searchButton.addEventListener("click", function() {
+      const selectedSpecialty = specialistsDropdown.value;
+
+      doctorDivs.forEach(div => {
+        div.style.display = "none";
+      });
+
+      if (selectedSpecialty) {
+        const selectedDivs = document.querySelectorAll(`.doctor.${selectedSpecialty}`);
+        selectedDivs.forEach(div => {
+          div.style.display = "block";
+        });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Appointment Booking</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="../static/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="../static/style_2.css" rel="stylesheet">
+    <style>
+        /* Apply styles to the container that will hold the scrolling image */
+        .scroll-container {
+ 
+            height: 700px;
+            overflow: auto; /* Add scrolling to the container */
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container-fluid position-relative d-flex p-0">
+      
+
+
+
+     
+
+
+            <!-- Recent Sales Start -->
+            <div class="container-fluid pt-4 px-4 scroll-container">
+                <div class="bg-secondary text-center rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h6 class="mb-0">Patient Details</h6>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="styled-table text-start align-middle table-bordered table-hover mb-0">
+                          <thead>
+                            <tr>
+                              <th>ID</th>
+                              <th>Name</th>
+                              <th>Email</th>
+                              <th>Phone Number</th>
+                              <th>Address</th>
+                              <th>Blood Group</th>
+                              <th>Status</th>
+                              <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for submission in submissions %}
+                            <tr>
+                              <td>{{ submission[0] }}</td>  <!-- Numeric index for ID -->
+                              <td>{{ submission[1] }}</td>  <!-- Numeric index for Name -->
+                              <td>{{ submission[2] }}</td>  <!-- Numeric index for Email -->
+                              <td>{{ submission[3] }}</td>  <!-- Numeric index for Phone Number -->
+                              <td>{{ submission[4] }}</td>  <!-- Numeric index for Address -->
+                              <td>{{ submission[5] }}</td>  <!-- Numeric index for Blood Group -->
+                              <td>{{ submission[6] }}</td>  <!-- Numeric index for Status -->
+                              <td>
+                              
+                                  {% if submission[6] == 'pending' %}
+                                      <form action="{{ url_for('update_status', submission_id=submission[0]) }}" method="POST">
+                                          <button type="submit">Accept</button>
+                                      </form>
+                                  {% elif submission[6] == 'accepted' and submission[7] == 'not_Donate' %}
+                                      <form action="{{ url_for('update_action', submission_id=submission[0]) }}" method="POST">
+                                          <button type="submit">Donate</button>
+                                      </form>
+                                  {% else %}
+                                      Donated
+                                  {% endif %}
+                            
+                       
+                              </td>
+                            </tr>
+                            {% endfor %}
+                          </tbody>
+                          </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Recent Sales End -->
+
+
+            
+        </div>
+        <!-- Content End -->
+
+
+    
+    </div>
+
+
+</body>
+
+</html>
+
+
+
+
+
+<table class="submissions-table">

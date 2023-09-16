@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<script>
+    function validateForm() {
+        var password = document.getElementById("pwd").value;
+        var strengthSpan = document.getElementById("strength");
+
+        // Check password strength
+        var strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        if (strongRegex.test(password)) {
+            strengthSpan.textContent = "Strong";
+            strengthSpan.style.color = "green";
+        } else {
+            strengthSpan.textContent = "Weak";
+            strengthSpan.style.color = "red";
+            alert("Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character.");
+            return false;
+        }
+
+        // Validate email
+        var email = document.getElementById("email").value;
+        var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!emailRegex.test(email)) {
+            alert("Invalid email address");
+            return false;
+        }
+
+        // Validate mobile number
+        var mobile = document.getElementById("mobile").value;
+        var mobileRegex = /^\d{10}$/;
+        if (!mobileRegex.test(mobile)) {
+            alert("Invalid mobile number. Please enter a 10-digit number.");
+            return false;
+        }
+
+        // Validate age
+        var age = document.getElementById("age").value;
+        if (age < 1 || age > 149) {
+            alert("Invalid age. Please enter an age between 1 and 149.");
+            return false;
+        }
+
+        // Rest of your validation code...
+
+        return true;
+    }
+</script>
+<body>
+    <div class="container">
+        <h2>Manager Register</h2>
+        <form method="POST" action="/manager_register" onsubmit="return validateForm()">
+            <label for="un">Username:</label>
+            <input type="text" id="un" name="un" required><br>
+            <label for="pwd">Password:</label>
+            <input type="password" id="pwd" name="pwd" required><br>
+            <div id="password-strength">
+                Password Strength: <span id="strength"></span>
+            </div>
+            <input type="submit" value="Register">
+        </form>
+        {% if message %}
+        <p class="message">{{ message }}</p>
+        {% endif %}
+        <p><a href="{{ url_for('admin_dashboard') }}">Back to Admin page</a></p>
+
+    </div>
+</body>
+</html>

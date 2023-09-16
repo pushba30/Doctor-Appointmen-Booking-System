@@ -1,0 +1,1174 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medicine</title>
+     <!-- font awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- owl carousel -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <!-- custom css -->
+      <link rel = "stylesheet" href = "../static/css/main.css" />
+      <link rel = "stylesheet" href = "../static/css/utilities.css" />
+      <link rel="stylesheet" href="../static/css/styles.css">
+      <!-- normalize.css -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="../static/css/style.css">
+  <!--============== Bootstrap link =============-->
+  <!-- _____ Slick Slider _____ -->
+  <link rel="stylesheet" href="../static/bootstrap_2.min.css">
+  <link rel="stylesheet" href="../static/css/slick.css">
+  <script>
+        // Function to open the modal
+        function openModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "block";
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+  //open popup
+  document.querySelectorAll('.popup-trigger').forEach(function (trigger) {
+    trigger.addEventListener('click', function (event) {
+      event.preventDefault();
+      document.querySelector('.popup').classList.add('is-visible');
+    });
+  });
+
+  //close popup
+  document.querySelector('.popup').addEventListener('click', function (event) {
+    if (event.target.classList.contains('popup-close') || event.target.classList.contains('popup')) {
+      event.preventDefault();
+      this.classList.remove('is-visible');
+    }
+  });
+
+  //close popup when pressing the Esc key
+  document.addEventListener('keyup', function (event) {
+    if (event.which === 27) {
+      document.querySelector('.popup').classList.remove('is-visible');
+    }
+  });
+});
+
+    </script>
+<style>
+  /* Style for the modal overlay */
+  .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+  }
+
+  /* Style for the modal content */
+  .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      text-align: center;
+  }
+
+  /* Style for the close button */
+  .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+  }
+</style>
+  
+  <style>         
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+
+
+
+.contact-info {
+width: 50%;
+}
+
+.contact-info-item {
+display: flex;
+margin-bottom: 30px;
+}
+
+.contact-info-icon {
+height: 70px;
+width: 70px;
+background-color: #fff;
+text-align: center;
+border-radius: 50%;
+}
+
+.contact-info-icon i {
+font-size: 30px;
+line-height: 70px;
+}
+
+.contact-info-content {
+margin-left: 20px;
+}
+
+.contact-info-content h4 {
+color: #000000;
+font-size: 1.4em;
+margin-bottom: 5px;
+}
+
+.contact-info-content p {
+color: #FFF;
+font-size: 1em;
+}
+
+.contact-form {
+background-color: #fff;
+padding: 40px;
+width: 45%;
+padding-bottom: 20px;
+padding-top: 20px;
+}
+
+.contact-form h2 {
+font-weight: bold;
+font-size: 2em;
+margin-bottom: 10px;
+color: #333;
+}
+
+.contact-form .input-box {
+position: relative;
+width: 100%;
+margin-top: 10px;
+}
+
+.contact-form .input-box input,
+.contact-form .input-box textarea{
+width: 90%;
+padding: 15px 0;
+font-size: 16px;
+margin: 10px 0;
+border: none;
+border-bottom: 2px solid #333;
+outline: none;
+resize: none;
+}
+
+.contact-form .input-box span {
+position: absolute;
+left: 0;
+padding: 5px 0;
+font-size: 16px;
+margin: 10px 0;
+pointer-events: none;
+transition: 0.5s;
+color: #666;
+}
+
+.contact-form .input-box input:focus ~ span,
+.contact-form .input-box textarea:focus ~ span{
+color: #e91e63;
+font-size: 12px;
+transform: translateY(-20px);
+}
+
+.contact-form .input-box input[type="submit"]
+{
+width: 100%;
+background: #00bcd4;
+color: #FFF;
+border: none;
+cursor: pointer;
+padding: 10px;
+font-size: 18px;
+border: 1px solid #00bcd4;
+transition: 0.5s;
+}
+
+.contact-form .input-box input[type="submit"]:hover
+{
+background: #FFF;
+color: #00bcd4;
+}
+
+@media (max-width: 991px) {
+section {
+padding-top: 50px;
+padding-bottom: 50px;
+}
+
+.row {
+flex-direction: column;
+}
+
+.contact-info {
+margin-bottom: 40px;
+width: 100%;
+}
+
+.contact-form {
+width: 100%;
+}
+}
+     </style>
+     <style>
+      body {
+  font-family:'Roboto';
+}
+
+.popup-trigger {
+  display: block;
+  width: 17px;
+  right: 2rem;
+  margin-left: 340px;
+  text-align: center;
+  color: #FFF;
+  font-size: 18px;
+  padding:1rem 2rem;
+  text-decoration:none;
+  font-weight: bold;
+  text-transform: uppercase;
+ 
+  background: #2c87ff;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.07);
+  transition:300ms all;
+}
+
+.popup-trigger:hover {
+    opacity:.8;
+}
+
+.popup {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 1000;
+  width: 100%;
+  background-color: rgba(94, 110, 141, 0.9);
+  opacity: 0;
+  visibility: hidden;
+  transition:500ms all;
+
+}
+
+.popup.is-visible {
+  opacity: 1;
+  visibility: visible;
+ transition:1s all;
+}
+
+.popup-container {
+  transform:translateY(-50%);
+  transition:500ms all;
+  position: relative;
+  width: 40%;
+  margin: 2em auto;
+  top: 5%;
+  padding:5rem;
+  background: #FFF;
+  border-radius: .25em .25em .4em .4em;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.is-visible .popup-container {
+  transform:translateY(0);
+  transition:500ms all;
+}
+
+.popup-container .popup-close {
+  position: absolute;
+  top: 8px;
+  font-size:0;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+}
+
+
+.popup-container .popup-close::before,
+.popup-container .popup-close::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  width: 14px;
+  height: 3px;
+  background-color: #8f9cb5;
+}
+
+.popup-container .popup-close::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  left: 8px;
+}
+
+.popup-container .popup-close::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  right: 8px;
+}
+
+
+.popup-container .popup-close:hover:before,
+.popup-container .popup-close:hover:after {
+  background-color:#1900ff;
+  transition:300ms all;
+}
+
+</style>
+<style>
+  * {box-sizing: border-box;}
+  body {font-family: Verdana, sans-serif;}
+  .mySlides {display: none;}
+  img {vertical-align: middle;}
+  
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 500px;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Caption text */
+  
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* The dots/bullets/indicators */
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  
+  
+  
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 7s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .text {font-size: 11px}
+  }
+  </style>
+  <script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("sample").style.top = "0";
+      } else {
+        document.getElementById("sample").style.top = "-50px";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+    </script>
+    <style>
+      .navbar_1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:0px;
+    background-color: rgb(85, 172, 226); /* You can adjust the background color and opacity */
+    z-index: 1000; /* Ensure it's above other content */
+}
+.marquee {
+            white-space: nowrap;
+        }
+        .icon {
+            font-size: 20px;
+            margin-right: 5px;
+            color: crimson;
+        }
+
+
+    </style>
+   
+  
+
+</head>
+
+<body >
+  <nav class = "navbar_1">
+              
+    <div class="container_3">
+     <div class="sample" >
+       <div class="navbar_1-content d-flex justify-content-between align-items-center">
+           <div class = "brand-and-toggler d-flex align-items-center justify-content-between">
+              
+               <a href="#" class="navbar_1-brand d-flex align-items-center">
+                   <div class="logo-wrapper">
+                   <span class="brand-shape d-inline-block text-white">
+                       <img src="../static/images/logo.jpg" alt="" width="50" height="80">
+                   </span>
+                   </div>
+                   <span class = "brand-text fw-7"> &nbsp;SoulCare</span>
+                   <span class="brand-text fw-7 sr-only">SoulCare</span>
+               </a>
+               
+               <button type = "button" class = "d-none navbar_1-show-btn">
+                   <i class = "fas fa-bars"></i>
+               </button>
+           </div>
+
+           <div class = "navbar_1-box">
+               <button type = "button" class = "navbar_1-hide-btn">
+                   <i class = "fas fa-times"></i>
+               </button>
+
+               <ul class = "navbar_1-nav d-flex align-items-center">
+                   <li class = "nav-item">
+                       <a href = "#" class = "nav-link text-white nav-active text-nowrap">Home</a>
+                   </li>
+                   <li class = "nav-item">
+                       <a href = "doctor_list" class = "nav-link text-white text-nowrap">Find a doctor</a>
+                   </li>
+                   <li class = "nav-item">
+                       <a href = "blood" class = "nav-link text-white text-nowrap">Blood</a>
+                   </li>
+                   <li class = "nav-item">
+                       <a href = "#" class = "nav-link text-white text-nowrap">Testimonials</a>
+                   </li>
+                   <li class = "nav-item">
+                       <a href = "#" class = "nav-link text-white text-nowrap">About us</a>
+                   </li>
+                   <li class = "nav-item">
+                       <a href = "login" class = "nav-link text-white text-nowrap">Login</a>
+                   </li>
+                   <li class = "nav-item">
+                     <a href="tel:7402159777" class="">
+                       <div class="logo-wrapper">
+                       <span class="brand-shape d-inline-block text-white">
+                           <img src="../static/images/tel.png" alt="" >
+                       </span>
+           
+
+                       </div>                     
+                     </a>
+                   
+                 </li>
+               </ul>
+           </div>
+       </div>
+   </div>
+ </div>
+ </nav>
+
+    <div class="page-wrapper">
+        <!-- header -->
+        <header class = "header_1"><br><br><br><br><br><br>        
+             
+                
+
+            <div class="banner">
+                <div class="container_3">
+                    <div class="banner-content">
+                        <div class="banner-left">
+                            <div class="content-wrapper">
+                                <div class="tbox">
+                                
+                                <h1 class="banner-title">Your Health Is <br>Our Priority</h1>
+                                <center><p class="text text-white" style="font-size: 16px;">Experience world-class medical care at our hospital, where skilled professionals provide compassionate treatment for your well-being.</p></center>
+
+                               <center><a href = "#" class=""></a> </center> 
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class = "banner-right d-flex align-items-center justify-content-end">
+                            <img src = "../static/images/banner2.jpeg" alt = ""  height="400">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>  
+        
+        
+        <!-- Button to open the modal -->
+    
+        
+
+<div class="popup" role="alert">
+  <div class="popup-container">
+    <a href="#0" class="popup-close img-replace">Close</a>
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        <div class="numbertext">1 / 18</div>
+        <img src="../static/images/one.jpg" style="width:100%">
+        <div class="text">Caption Text</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">2 / 18</div>
+        <img src="../static/images/two.jpg" style="width:100%">
+        <div class="text">Caption Two</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">3 / 18</div>
+        <img src="../static/images/three.jpg" style="width:100%">
+        <div class="text">Caption Three</div>
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">4 / 18</div>
+        <img src="../static/images/four.jpg" style="width:100%">
+        <div class="text">Caption Text</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">5 / 18</div>
+        <img src="../static/images/five.jpg" style="width:100%">
+        <div class="text">Caption Two</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">6 / 18</div>
+        <img src="../static/images/six.jpg" style="width:100%">
+        <div class="text">Caption Three</div>
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">7 / 18</div>
+        <img src="../static/images/seven.jpg" style="width:100%">
+        <div class="text">Caption Text</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">8 / 18</div>
+        <img src="../static/images/eight.jpg" style="width:100%">
+        <div class="text">Caption Two</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">9 / 18</div>
+        <img src="../static/images/nine.jpg" style="width:100%">
+        <div class="text">Caption Three</div>
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">10 / 18</div>
+        <img src="../static/images/ten.jpg" style="width:100%">
+        <div class="text">Caption Text</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">11 / 18</div>
+        <img src="../static/images/eleven.jpg" style="width:100%">
+        <div class="text">Caption Two</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">12 / 18</div>
+        <img src="../static/images/twelve.jpg" style="width:100%">
+        <div class="text">Caption Three</div>
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">13 / 18</div>
+        <img src="../static/images/thirteen.jpg" style="width:100%">
+        <div class="text">Caption Text</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">14 / 18</div>
+        <img src="../static/images/fourteen.jpg" style="width:100%">
+        <div class="text">Caption Two</div>
+      </div>
+
+      <div class="mySlides fade">
+        <div class="numbertext">15 / 18</div>
+        <img src="../static/images/fifteen.jpg" style="width:100%">
+        <div class="text">Caption Three</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">16 / 18</div>
+        <img src="../static/images/sixteen.jpg" style="width:100%">
+        <div class="text">Caption Three</div>
+      </div>
+      <div class="mySlides fade">
+        <div class="numbertext">17 / 18</div>
+        <img src="../static/images/seventeen.jpg" style="width:100%">
+        <div class="text">Caption Text</div>
+      </div>
+      
+      <div class="mySlides fade">
+        <div class="numbertext">18 / 18</div>
+        <img src="../static/images/eigtheen.jpg" style="width:100%">
+        <div class="text">Caption Two</div>
+      </div>
+      
+     
+      
+      </div>
+      <br>
+      
+      <div style="text-align:center">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span>
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span>
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span>
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+      </div>
+      
+      
+      
+  </div> 
+</div> 
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- The Modal -->
+    <div id="myModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2>This is a Popup HTML Page</h2>
+            <p>Put your content here.</p>
+        </div>
+    </div>
+    
+        <!-- end of header -->
+        <main>
+          
+            <section class = "sc-services">
+          <p><a href="#0" id="info" class=" popup-trigger btn btn-primary py-3 " title="info">Health Tips</a> </p><br>
+              <h5 style="color: #e91e1e;">
+                <marquee behavior="scroll" direction="left">
+                  <i class="fas fa-tint icon"></i>&nbsp;&nbsp;**** Donate and save a life with blood ****&nbsp;&nbsp;<i class="fas fa-tint icon"></i>
+              </marquee>
+          <br></h5>
+
+                <div class="container_3">
+                  
+                    <div class = "services-content">
+                        <div class="title-box text-center">
+                            <div class = "content-wrapper">
+                                <h3 class = "title-box-name"> Our services</h3>
+                                <div class = "title-separator mx-auto"></div>
+                                <p class = "text title-box-text">We provide you the best choices for you. Adjust it to your health needs and make sure you undergo treatment with our highly qualified doctors you can consult with us which type of service is suitable for your health</p>
+                            </div>
+                        </div>
+
+                        <div class = "services-list">
+                          
+                            <div class = "services-item">
+                              <a href = "doctor_list">
+                                <div class = "item-icon">
+                                    <img src = "../static/images/service-icon-1.png" alt = "service icon">
+                                </div>
+                                <h5 class = "item-title fw-7" style="color: #000000; font-family:Verdana ;font-style: normal;">Search doctor</h5>
+                                <p class = "text" style="font-size: 16px;">Choose your doctor form thousands of specialist, general and trusted hospitals.</p>
+                            </div></a>
+
+                            <div class = "services-item">
+                              <a href = "#">
+                                <div class = "item-icon">
+                                    <img src = "../static/images/service-icon-2.png" alt = "service icon">
+                                </div>
+                                <h5 class = "item-title fw-7" style="color: #000000; font-family:Verdana ;font-style: normal;">Online pharmacy</h5>
+                                <p class = "text" style="font-size: 16px;">Buy your medicines with our mobile application with a simple delivery system</p>
+                            </div></a>
+
+                            <div class = "services-item">
+                              <a href = "#">
+                                <div class = "item-icon">
+                                    <img src = "../static/images/service-icon-3.png" alt = "service icon">
+                                </div>
+                                <h5 class = "item-title fw-7" style="color: #000000; font-family:Verdana ;font-style: normal;">Consultation</h5>
+                                <p class = "text" style="font-size: 16px;">Free consultation with our trusted doctors and get the best recommendations.</p>
+                            </div></a>
+
+                            <div class = "services-item">
+                              <a href = "#">
+                                <div class = "item-icon">
+                                    <img src = "../static/images/service-icon-4.png" alt = "service icon">
+                                </div>
+                                <h5 class = "item-title fw-7" style="color: #000000; font-family:Verdana ;font-style: normal;">Details info</h5>
+                                <p class = "text" style="font-size: 16px;">Free consultation with our trusted doctors and get the best recommendations.</p>
+                            </div></a>
+                            
+                            <div class = "services-item">
+                              <a href = "#">
+                                <div class = "item-icon">
+                                    <img src = "../static/images/service-icon-5.png"  alt = "service icon">
+                                </div>
+                                <h5 class = "item-title fw-7" style="color: #000000; font-family:Verdana ;font-style: normal;">Emergency care</h5>
+                                <p class = "text" style="font-size: 16px;">You can get 24/7 urgent care for yourself or your children and your lovely family.</p>
+                            </div></a>
+                            
+                            <div class = "services-item">
+                              <a href="blood" >
+                                <div class = "item-icon" >
+                                    <img src = "../static/images/service-icon-6.png" alt = "service icon">
+                                </div>
+                                <h5 class = "item-title fw-7" style="color: #000000; font-family:Verdana ;font-style: normal;">Blood</h5>
+                                <p class = "text" style="font-size: 16px;">Blood Donation Is A Small Act Of Kindness That Does Great And Big Wonders.</p>
+                            </div></a>
+                        </div>
+
+                        <div class = "d-flex align-items-center justify-content-center services-main-btn">
+                            <button type = "button" class = "btn btn-primary-outline">Learn more</button>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+            <!-- _______________________________________________ Offers Prodcut Slider _____________________________________________________ -->
+    <div class="container my-2 py-4">
+        <div class="row justify-content-center">
+          <div class="col-lg-7 col-md-8">
+            <div class="text-center">
+                <div class="black-color" >
+              <h1 class="text-warning" style="font-size: 45px;">Our specialities</h1>
+                <p class="text-light">Where others see challenges, our hospital sees opportunities to excel in treating diseases that demand expertise</p>
+            </div>
+          </div>
+        </div>
+        <br>
+  
+        <div class="slider">
+          <div class="mx-3">
+            <div class="card border-0 rounded-0"
+              style="background-image:url(../static/medicine.jpg);background-size: cover;">
+              <div class="d-flex bg-opacity-25 justify-content-center align-items-end" style="height: 260px">
+                <div class="text-center pb-2 bg-dark w-100 pt-3 bg-opacity-75">
+                  <a class="text-white fw-bold">General Medicine</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mx-3">
+            <div class="card border-0 rounded-0"
+              style="background-image:url(../static/sugar.jpg) ;background-size: cover;">
+              <div class="d-flex bg-opacity-25 justify-content-center align-items-end" style="height: 260px">
+                <div class="text-center pb-2 bg-dark w-100 pt-3 bg-opacity-75">
+                  <a class="text-white fw-bold">Diabetology </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mx-3">
+            <div class="card border-0 rounded-0"
+              style="background-image:url(../static/muscle.jpg) ;background-size: cover;">
+              <div class="d-flex bg-opacity-25 justify-content-center align-items-end" style="height: 260px">
+                <div class="text-center pb-2 bg-dark w-100 pt-3 bg-opacity-75">
+                  <a class="text-white fw-bold">Orthopaedics</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mx-3">
+            <div class="card border-0 rounded-0"
+              style="background-image:url(../static/heart.jpg);background-size:cover;">
+              <div class="d-flex bg-opacity-25 justify-content-center align-items-end" style="height: 260px">
+                <div class="text-center pb-2 bg-dark w-100 pt-3 bg-opacity-75">
+                  <a class="text-white fw-bold">Cardiology</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mx-3">
+            <div class="card border-0 rounded-0"
+              style="background-image:url(../static/liver.jpg) ;background-size: cover;">
+              <div class="d-flex bg-opacity-25 justify-content-center align-items-end" style="height: 260px">
+                <div class="text-center pb-2 bg-dark w-100 pt-3 bg-opacity-75">
+                  <a class="text-white fw-bold">Liver disease</a>
+                </div>
+              </div>
+            </div>
+          </div>         
+      </div>
+  </div>
+</div>
+
+<br><br>
+  <center><h1 class = "title-box-name" >Best Experience Doctors</h1>  </center><br><br>
+
+  <section>
+                    
+    <div class="row_1" style="margin-left: 170px;">
+        <div class="column">
+        <div class="container_2" >
+          <img src="../static/doc.jpg" alt="" style="width:100%;  border-radius: 50%;height:200px;">
+          <div class="overlay">Shan Murphy<br>Neurologist</div>
+        </div></div>
+        
+        <div class="column">
+        <div class="container_2">
+          <img src="../static/doc1.jpg" alt="" style="width:100% ;border-radius: 50%;height:200px">
+          <div class="overlay">Aruna<br>Child specialist</div>
+        </div></div>
+        
+        <div class="column">
+        <div class="container_2">
+          <img src="../static/doc2.jpg" alt="" style="width:100% ;  border-radius: 50%;height:200px" >
+      <div class="overlay">Siraj khan<br>Heart surgerion</div>
+        </div></div>
+      </div>
+</section>
+<section class = "sc-feedback">
+    <div class="container_3">
+        <div class = "feedback-content">
+            
+           
+            <div class = "title-box text-center">
+                <div class = "content-wrapper">
+                    <h3 class = "title-box-name text-white">What our visitors are saying ?</h3>
+                    <div class = "title-separator mx-auto"></div>
+                </div>
+            </div>
+
+            <div class = "feedback-list feedback-slider owl-carousel owl-theme">
+                <div class = "feedback-item d-grid">
+                    <div class = "item-left d-flex align-items-center">
+                        <div class = "item-img">
+                            <img src = "../static/images/ima1.jpeg" alt = "">
+                        </div>
+                        <div class = "item-info text-white">
+                            <p class = "fw-7 name">Emila</p>
+                            <span class = "designation fw-4">Patient</span>
+                        </div>
+                    </div>
+                    <div class = "item-right">
+                        <p class = "text text-white">""The medical team went above and beyond to provide thorough and personalized care. The staff was attentive, kind, and truly compassionate. Highly recommended!""</p>
+                    </div>
+                </div>
+
+                <div class = "feedback-item d-grid">
+                    <div class = "item-left d-flex align-items-center">
+                        <div class = "item-img">
+                            <img src = "../static/images/man2.jpeg" alt = "">
+                        </div>
+                        <div class = "item-info text-white">
+                            <p class = "fw-7 name">Edward khan</p>
+                            <span class = "designation fw-4">Patient</span>
+                        </div>
+                    </div>
+                    <div class = "item-right">
+                        <p class = "text text-white">""I am truly grateful for the outstanding care I received at Soulcare. Thank you for going above and beyond!""</p>
+                    </div>
+                </div>
+
+                <div class = "feedback-item d-grid">
+                    <div class = "item-left d-flex align-items-center">
+                        <div class = "item-img">
+                            <img src = "../static/images/person-image.png" alt = "">
+                        </div>
+                        <div class = "item-info text-white">
+                            <p class = "fw-7 name">Simon Paul</p>
+                            <span class = "designation fw-4">Patient</span>
+                        </div>
+                    </div>
+                    <div class = "item-right"> 
+                      <p class = "text text-white"> "The medical team's expertise and dedication were evident in every step of my journey.  The staff's kindness and professionalism made me feel like part of a caring family. My recovery was better than I could have hoped for. Highly commendable!"</p>
+                    </div>
+                </div>
+
+
+                <div class = "feedback-item d-grid">
+                    <div class = "item-left d-flex align-items-center">
+                        <div class = "item-img">
+                            <img src = "../static/images/man3.jpeg" alt = "">
+                        </div>
+                        <div class = "item-info text-white">
+                            <p class = "fw-7 name">Lily</p>
+                            <span class = "designation fw-4">Patient</span>
+                        </div>
+                    </div>
+                    <div class = "item-right">
+                        <p class = "text text-white">""I was thoroughly impressed with the level of care and attention I received at soulcare.""</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class = "sc-articles">
+   
+    <div class = "container_3">
+        <div class = "articles-content">
+            
+            <div class = "title-box text-center">
+                <div class = "content-wrapper">
+                    <h3 class = "title-box-name">Check out our latest article</h3>
+                    <div class = "title-separator mx-auto"></div>
+                </div>
+            </div>
+            
+            <div class = "articles-list d-flex flex-wrap justify-content-center">
+                <article class = "articles-item">
+                    <div class = "item-img">
+                        <img src = "../static/images/article-img-1.png">
+                    </div>
+                    <div class = "item-body">
+                        <div class = "item-title">Disease detection, check up in the laboratory</div>
+                        <p class = "text">In this case, the role of the health laboratory is very important to do a disease detection ...</p>
+                        <a href = "#" class = "item-link text-blue d-flex align-items-baseline">
+                            <span class = "item-link-text">Read more</span>
+                            <span class = "item-link-icon">
+                                <i class = "fas fa-arrow-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class = "articles-item">
+                    <div class = "item-img">
+                        <img src = "../static/images/article-img-2.png">
+                    </div>
+                    <div class = "item-body">
+                        <div class = "item-title">Herbal medicines that are safe for consumption</div>
+                        <p class = "text">Herbal medicine is very widely used at this time because of its very good for your health ...</p>
+                        <a href = "#" class = "item-link text-blue d-flex align-items-baseline">
+                            <span class = "item-link-text">Read more</span>
+                            <span class = "item-link-icon">
+                                <i class = "fas fa-arrow-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class = "articles-item">
+                    <div class = "item-img">
+                        <img src = "../static/images/article-img-3.png">
+                    </div>
+                    <div class = "item-body">
+                        <div class = "item-title">Natural care for healthy facial skin</div>
+                        <p class = "text">A healthy lifestyle should start from now and also for your skin health ...</p>
+                        <a href = "#" class = "item-link text-blue d-flex align-items-baseline">
+                            <span class = "item-link-text">Read more</span>
+                            <span class = "item-link-icon">
+                                <i class = "fas fa-arrow-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+            
+<!----------------------------------------------------------------Footer start------------------------------->
+<section>
+    <footer class = "footer">
+     <center><h2><b>CONTACT US</b></h2></center> 
+        <div class = "container_3">
+            <div class = "footer-content">
+                <div class = "footer-list d-grid text-white">
+                    <div class = "footer-item">
+                        <a href = "" class = "navbar_1-brand d-flex align-items-center"></a>
+                            <span class = "brand-shape d-inline-block text-white">  
+
+
+                                <div class="logo-wrapper">
+                                    <span class="brand-shape d-inline-block text-white">
+                                        <img src="../static/images/logo.jpg" alt="" width="50" height="80">
+                                    </span>
+                                    </div> 
+                            </span>
+                        <span class = "brand-text fw-7">SoulCare</span> <br><br><br>                                          
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+    
+    <div class="container">
+      <div class="row">
+        
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            
+            <div class="contact-info-content">
+              <h4>Address</h4>
+              <p>4671 Sugar Camp Road,<br/> Owatonna, Minnesota, <br/>55060</p>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            
+            <div class="contact-info-content">
+              <h4>Phone</h4><br>
+              <p><a href="tel:7402159777" style="color: #ffffff; font-family:Verdana ;font-style: normal; font-size: 15px;">7402159777</a></p>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            
+            <div class="contact-info-content">
+              <h4>Email</h4>
+             <p>soulcare@gmail.com</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <form action="" id="contact-form">
+            <h2>Send Message</h2>
+            <div class="input-box">
+              <input type="text" required="true" name="">
+              <span>Full Name</span>
+            </div>
+            
+            <div class="input-box">
+              <input type="email" required="true" name="">
+              <span>Email</span>
+            </div>
+            
+            <div class="input-box">
+              <textarea required="true" name=""></textarea>
+              <span>Type your Message...</span>
+            </div>
+            
+            <div class="input-box">
+              <input type="submit" value="Send" name="">
+            </div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </footer>
+  </section>
+  <script>
+    window.addEventListener('mouseover', initLandbot, { once: true });
+    window.addEventListener('touchstart', initLandbot, { once: true });
+    var myLandbot;
+    function initLandbot() {
+      if (!myLandbot) {
+        var s = document.createElement('script');s.type = 'text/javascript';s.async = true;
+        s.addEventListener('load', function() {
+          var myLandbot = new Landbot.Livechat({
+            configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-1699556-CA56V4TJPG19JU3K/index.json',
+          });
+        });
+        s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.js';
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+      }
+    }
+    </script>
+
+           
+    <!-- ___________ Slick Slider ______________ -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+  <script>
+
+    $('.slider').slick({
+      centerMode: true,
+      dots: true,
+      autoplay: true,
+      centerPadding: '60px',
+      slidesToShow: 3,
+      responsive: [{
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          Infinity: true,
+          slidesToShow: 1
+        },
+      }]
+    });
+
+  </script>
+<script>
+  let slideIndex = 0;
+  showSlides();
+  
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+  }
+  </script>
+   
+
+  <!-- jquery cdn -->
+  <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+  <!-- owl carousel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- custom js -->
+  <script src = "../static/js/script.js"></script>
+  
+</body>
+
+</html>

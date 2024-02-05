@@ -86,8 +86,8 @@ def login():
 #Function to send email and SMS
 def send_notification(subject, email_message, to_email, to_phone, sms_message):
     # Email part
-    from_email = "suganthi.cs21@bitsathy.ac.in"  # Replace with your email
-    from_password = "Suganthi@10"  # Replace with your email password
+    from_email = " "  # Replace with your email
+    from_password = " "  # Replace with your email password
     to_email = to_email
 
     msg = MIMEText(email_message)
@@ -104,13 +104,13 @@ def send_notification(subject, email_message, to_email, to_phone, sms_message):
         server.quit()
 
         # Send SMS using Twilio
-        account_sid = 'AC5721ff047c2b77fb32dc516c0e366460'
-        auth_token = '3bdda0a97695d61c5d52d1bf172b7c3d'
+        account_sid = ' '#your Api Key
+        auth_token = ' '
         client = Client(account_sid, auth_token)
 
         message = client.messages.create(
             body=sms_message,
-            from_='+16188449558',
+            from_=' ',#your tiwilio number
             to=to_phone
         )
         print("SMS:", sms_message)
@@ -130,8 +130,8 @@ def send_reset_email(email, token):
     # Configure the SMTP server
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
-    smtp_username = "suganthi.cs21@bitsathy.ac.in"
-    smtp_password = "Suganthi@10"
+    smtp_username = " "#gmail
+    smtp_password = " "#password
 
     # Create a secure connection to the SMTP server
     with smtplib.SMTP(smtp_server, smtp_port) as server:
